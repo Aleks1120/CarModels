@@ -5,7 +5,7 @@ import static com.exsersice.cars.Type.*;
 public class AudiCar extends BaseCar {
     private AudiSpec spec;
 
-    public AudiCar( String model, int year, Body body, Engine engine, AudiSpec spec) {
+    public AudiCar( String model, int year, Body body, Engine engine, AudiSpec spec) throws Exception {
         super(AUDI, model, year, body, engine);
         this.spec = spec;
     }

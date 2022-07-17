@@ -8,7 +8,7 @@ public class BmwCar extends BaseCar{
 
     private LocalDate warranty;
 
-    public BmwCar( String model, int year, Body body, Engine engine, LocalDate warranty){
+    public BmwCar( String model, int year, Body body, Engine engine, LocalDate warranty) throws Exception {
         super(BMW, model,year,body,engine);
         this.warranty = warranty;
     }
