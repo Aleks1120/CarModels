@@ -3,11 +3,22 @@ package com.exsersice.cars;
 import static com.exsersice.cars.Type.*;
 
 public class AudiCar extends BaseCar {
-    private AudiSpec spec;
+    @Override
+    BaseCar Print() {
+        System.out.println("Audi's "
+                + raceHistory);
+        return null;
+    }
 
-    public AudiCar( String model, int year, Body body, Engine engine, AudiSpec spec) throws Exception {
+    private AudiSpec spec;
+    private CarSpec carSpec;
+    private RaceHistory raceHistory;
+
+    public AudiCar( String model, int year, Body body, Engine engine, AudiSpec spec, CarSpec carSpec, RaceHistory raceHistory) throws Exception {
         super(AUDI, model, year, body, engine);
         this.spec = spec;
+        this.carSpec = carSpec;
+        this.raceHistory = raceHistory;
     }
 
     @Override

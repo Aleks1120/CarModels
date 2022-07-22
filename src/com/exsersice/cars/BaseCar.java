@@ -1,6 +1,12 @@
 package com.exsersice.cars;
 
 public abstract class BaseCar {
+    BaseCar Print(){
+        System.out.println();
+        return null;
+    }
+
+
     private Type type;
     private String model;
     private int year;
@@ -11,8 +17,8 @@ public abstract class BaseCar {
         this.type = type;
         setModel(model);
         setYear(year);
-        this.body = body;
-        this.engine = engine;
+        setBody(body);
+        setEngine(engine);
     }
 
     Type getType() {
@@ -45,9 +51,21 @@ public abstract class BaseCar {
     Body getBody() {
         return body;
     }
+    private void setBody(Body body) throws Exception {
+        if (body == null){
+            throw new Exception("Car does not have a body");
+        }
+        this.body = body;
+    }
 
     Engine getEngine() {
         return engine;
+    }
+    private void setEngine (Engine engine) throws Exception {
+        if (engine == null){
+            throw new Exception("Engine does not exist");
+        }
+        this.engine = engine;
     }
 
 }
