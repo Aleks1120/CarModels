@@ -29,7 +29,7 @@ public class RaceEvent {
         boolean dakarRallyCondition = 1 > racePlace || racePlace > 120;
 
         if(this.raceTour == RaceTour.NASCAR && nascarCondition){
-            throw new Exception(" Error! ");
+            throw new Exception(" Error!");
         } else if (this.raceTour == RaceTour.DAKAR_RALLY && dakarRallyCondition){
             throw new Exception(" Error!");
         }
