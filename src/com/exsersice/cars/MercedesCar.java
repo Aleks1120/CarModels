@@ -2,12 +2,7 @@ package com.exsersice.cars;
 
 import static com.exsersice.cars.Type.*;
 
-public class MercedesCar extends BaseCar{
-    @Override
-    BaseCar Print() {
-        System.out.println(" Mercedes did not participated ");
-        return null;
-    }
+public class MercedesCar extends BaseCar {
 
     private boolean hasAutomaticTransmission;
     private boolean hasLeatherSaloon;
@@ -26,6 +21,6 @@ public class MercedesCar extends BaseCar{
         return "MercedesCar{" +
                 " " + getModel() + " " + getYear() + " " + getBody() + " " + getEngine() + " " +
                 "hasAutomaticTransmission=" + hasAutomaticTransmission +
-                ", hasLeatherSaloon=" + hasLeatherSaloon + " , " + spec ;
+                ", hasLeatherSaloon=" + hasLeatherSaloon + " , " + spec;
     }
 }

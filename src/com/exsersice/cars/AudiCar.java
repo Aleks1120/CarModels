@@ -1,30 +1,41 @@
 package com.exsersice.cars;
 
+import java.util.List;
+
+import static com.exsersice.cars.RaceTour.DAKAR_RALLY;
+import static com.exsersice.cars.RaceTour.NASCAR;
 import static com.exsersice.cars.Type.*;
 
 public class AudiCar extends BaseCar {
-    @Override
-    BaseCar Print() {
-        System.out.println("Audi's "
-                + raceHistory);
-        return null;
-    }
+    private static List<RaceEvent> raceHistory = setRaceHistory();
 
     private AudiSpec spec;
     private CarSpec carSpec;
-    private RaceHistory raceHistory;
 
-    public AudiCar( String model, int year, Body body, Engine engine, AudiSpec spec, CarSpec carSpec, RaceHistory raceHistory) throws Exception {
+    public AudiCar(String model, int year, Body body, Engine engine, AudiSpec spec, CarSpec carSpec) throws Exception {
         super(AUDI, model, year, body, engine);
         this.spec = spec;
         this.carSpec = carSpec;
-        this.raceHistory = raceHistory;
     }
 
     @Override
     public String toString() {
         return "AudiCar" +
                 " " + getModel() + " " + getYear() + " " + getBody() + " " + getEngine() + " "
-                 + spec;
+                + spec + " " + raceHistory + " " + carSpec;
+    }
+
+    private static List<RaceEvent> setRaceHistory() {
+        try {
+
+            final RaceEvent race1 = new RaceEvent(DAKAR_RALLY, 2010, 2);
+            final RaceEvent race2 = new RaceEvent(NASCAR, 1990, 1);
+            final RaceEvent race3 = new RaceEvent(NASCAR, 2000, 2);
+
+            return List.of(race1, race2, race3);
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+        }
+        return null;
     }
 }

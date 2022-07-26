@@ -1,12 +1,12 @@
 package com.exsersice.cars;
 
-public class RaceHistory {
+public class RaceEvent {
 
     private RaceTour raceTour;
     private int raceYear;
     private int racePlace;
 
-    RaceHistory(RaceTour raceTour, int raceYear, int racePlace) throws Exception {
+    RaceEvent(RaceTour raceTour, int raceYear, int racePlace) throws Exception {
         setRaceTour(raceTour);
         setRaceYear(raceYear);
         setRacePlace(racePlace);
@@ -24,10 +24,14 @@ public class RaceHistory {
         this.raceYear = raceYear;
     }
     private void setRacePlace(int racePlace) throws Exception {
-        if(racePlace< 1 || racePlace > 30){
-            throw new Exception(" Invalid placement for NASCAR");
-        } else if (racePlace > 120){
-            throw new Exception(" Invalid placement for DAKAR RALLY");
+
+        boolean nascarCondition = 1 > racePlace || racePlace > 30;
+        boolean dakarRallyCondition = 1 > racePlace || racePlace > 120;
+
+        if(this.raceTour == RaceTour.NASCAR && nascarCondition){
+            throw new Exception(" Error! ");
+        } else if (this.raceTour == RaceTour.DAKAR_RALLY && dakarRallyCondition){
+            throw new Exception(" Error!");
         }
         this.racePlace = racePlace;
     }
