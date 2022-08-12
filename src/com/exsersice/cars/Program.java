@@ -32,9 +32,12 @@ public class Program {
             catalogueList.add(car2);
             catalogueList.add(car3);
             catalogueList.add(car4);
-
             System.out.println(catalogueList);
 
+            List<Raceable> racingCars = new ArrayList<>();
+            racingCars.add(car1);
+            racingCars.add(car3);
+            racingCars.add(car4);
 
         } catch (Exception exception) {
             System.out.println("Something went wrong " + exception);

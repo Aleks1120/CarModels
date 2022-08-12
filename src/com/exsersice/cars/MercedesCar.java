@@ -3,13 +3,18 @@ package com.exsersice.cars;
 import static com.exsersice.cars.Type.*;
 
 public class MercedesCar extends BaseCar {
-
     private boolean hasAutomaticTransmission;
     private boolean hasLeatherSaloon;
     private CarSpec spec;
 
-    public MercedesCar(String model, int year, Body body, Engine engine, boolean hasAutomaticTransmission,
-                       boolean hasLeatherSaloon, CarSpec spec) throws Exception {
+    public MercedesCar(
+            String model,
+            int year,
+            Body body,
+            Engine engine,
+            boolean hasAutomaticTransmission,
+            boolean hasLeatherSaloon,
+            CarSpec spec) throws Exception {
         super(MERCEDES, model, year, body, engine);
         this.hasAutomaticTransmission = hasAutomaticTransmission;
         this.hasLeatherSaloon = hasLeatherSaloon;

@@ -17,7 +17,7 @@ public class Body {
     }
 
     private void setColor(BodyColor color) throws Exception {
-        if (color == null){
+        if (color == null) {
             throw new Exception("Please select a different color");
         }
         this.color = color;

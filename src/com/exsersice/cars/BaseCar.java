@@ -29,7 +29,6 @@ public abstract class BaseCar {
             throw new Exception("Expected car model to be selected");
         }
         this.model = model;
-
     }
 
     int getYear() {
@@ -64,5 +63,4 @@ public abstract class BaseCar {
         }
         this.engine = engine;
     }
-
 }

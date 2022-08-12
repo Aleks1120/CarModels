@@ -1,14 +1,13 @@
 package com.exsersice.cars;
 
+import java.util.Collections;
 import java.util.List;
 
 import static com.exsersice.cars.RaceTour.DAKAR_RALLY;
 import static com.exsersice.cars.RaceTour.NASCAR;
 import static com.exsersice.cars.Type.*;
 
-public class AudiCar extends BaseCar {
-    private static List<RaceEvent> raceHistory = setRaceHistory();
-
+public class AudiCar extends BaseCar implements Raceable {
     private AudiSpec spec;
     private CarSpec carSpec;
 
@@ -22,10 +21,10 @@ public class AudiCar extends BaseCar {
     public String toString() {
         return "AudiCar" +
                 " " + getModel() + " " + getYear() + " " + getBody() + " " + getEngine() + " "
-                + spec + " " + raceHistory + " " + carSpec;
+                + spec + " " + getRaceHistory() + " " + carSpec;
     }
 
-    private static List<RaceEvent> setRaceHistory() {
+    public List<RaceEvent> getRaceHistory() {
         try {
 
             final RaceEvent race1 = new RaceEvent(DAKAR_RALLY, 2010, 2);
@@ -36,6 +35,6 @@ public class AudiCar extends BaseCar {
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
-        return null;
+        return Collections.emptyList();
     }
 }
